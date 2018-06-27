@@ -1,9 +1,9 @@
-package view.mainmenu;
+package src.view.mainmenu;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import view.JFXView;
+import src.view.JFXView;
 
 
 public class Gui implements JFXView, IGui {

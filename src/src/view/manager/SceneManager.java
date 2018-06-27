@@ -1,11 +1,11 @@
-package view.manager;
+package src.view.manager;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view.JFXView;
-import view.mainmenu.Gui;
+import src.view.JFXView;
+import src.view.mainmenu.Gui;
 
 import java.io.IOException;
 
