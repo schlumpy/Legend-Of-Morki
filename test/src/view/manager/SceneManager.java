@@ -22,6 +22,7 @@ public class SceneManager {
         try{
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource(view.getRessource()));
+            System.out.print(loader.getLocation());
             loader.setController(view);
             Parent parent = loader.load();
             Scene scene = new Scene(parent);
