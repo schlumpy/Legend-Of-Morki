@@ -11,5 +11,7 @@ public class DefendHandler {
      * @param attacker Monster
      */
     DefendHandler(Turret defender, Enemy attacker) {
+        while(!defender.empty()) attacker.getHp() -= defender.getTotalDefenderDamage();
+        }
     }
 }

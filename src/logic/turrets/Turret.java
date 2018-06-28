@@ -36,4 +36,29 @@ public abstract class Turret {
         }
         return re;
     }
+
+    public Defender[] getCurrentDefenders() {
+        return this.type;
+    }
+
+    public int getAmountDefenders() {
+        return this.type.length;
+    }
+
+    public int getTotalDefenderDamage() {
+        int re = 0;
+        for (int i = 0; i <= this.type.length; i++) {
+            re += this.type[i].dmg;
+        }
+        return re;
+    }
+
+    public boolean empty() {
+        for (int i = 0; i <= this.type.length; i++) {
+            if (!this.type[i].alive) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
