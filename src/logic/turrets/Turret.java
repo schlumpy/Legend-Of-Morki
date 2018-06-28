@@ -1,47 +1,20 @@
 package logic.turrets;
 
+/**
+ * Turret is only the base for a defending structure or archer
+ * Turret does not deal damage.
+ */
 public abstract class Turret {
 
-    int hp;
-    int dmg;
-    int attackspeed;
-    boolean alive;
+    private Defender[] type;
+    private boolean alive;
 
-    /**
-     * Sets hp of a turret after a fight
-     * @param hp amount
-     */
-    public void setHp(int hp) {
-        this.hp = hp;
+    Turret(Defender[] defence) {
+        int MAXLENGTH = 4;
+        System.arraycopy(defence, 0, this.type, 0, MAXLENGTH);
+        this.type = defence;
+        this.alive = true;
     }
-
-    /**
-     * Gets the current amount of hp
-     * @return current hp
-     */
-    public int getHp() {
-        return this.hp;
-    }
-
-    /**
-     * Sets the current damage a turret deals
-     * @param dmg new damage
-     */
-    public void setDmg(int dmg) {
-        this.dmg = dmg;
-    }
-
-    /**
-     * Sets the new damage of a turret, e.g. after a buff
-     * @return current damage
-     */
-    public int getDmg() {
-        return this.dmg;
-    }
-
-    /*
-    Getters/Setters Missing
-     */
 
     /**
      * Gets the State of a turret
@@ -49,5 +22,18 @@ public abstract class Turret {
      */
     public boolean isAlive() {
         return alive;
+    }
+
+    /**
+     * Returns number of current defenders, after getting the array of current types of defenders.
+     * @param defence current array of defenders
+     * @return current number of defenders
+     */
+    public int getNumberOfDefenders(Defender[] defence) {
+        int re = 0;
+        for (Defender amountDefenders : defence) {
+            re += 1;
+        }
+        return re;
     }
 }

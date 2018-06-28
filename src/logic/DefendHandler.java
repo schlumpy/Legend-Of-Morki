@@ -11,10 +11,5 @@ public class DefendHandler {
      * @param attacker Monster
      */
     DefendHandler(Turret defender, Enemy attacker) {
-        while(defender.isAlive() || attacker.isAlive()) {
-            //without armor
-            defender.setHp(defender.getHp() - attacker.getDmg());
-            attacker.setHp(attacker.getHp() - defender.getDmg());
-        }
     }
 }
