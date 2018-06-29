@@ -9,6 +9,14 @@ public abstract class Defender {
     boolean aoe;
 
     /**
+     * Sets if the defender has already died or not.
+     * @param alive ?
+     */
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    /**
      * Minus one defender.
      */
     public abstract void die();
@@ -22,7 +30,15 @@ public abstract class Defender {
     }
 
     /**
-     * Gets the current attack of this defender for a fight.
+     * Sets the new HP of a defender
+     * @param hp new hp
+     */
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    /**
+     * Gets the current damage of this defender.
      * @return current damage
      */
     public int getDmg() {
@@ -30,10 +46,42 @@ public abstract class Defender {
     }
 
     /**
-     * Sets the new HP of a defender
-     * @param hp new hp
+     * Sets the new damage of this defender.
+     * @param dmg new damage
      */
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setDmg(int dmg) {
+        this.dmg = dmg;
+    }
+
+    /**
+     * Gets the current attackspeed of this defender.
+     * @return current attackspeed
+     */
+    public double getAttackspeed() {
+        return attackspeed;
+    }
+
+    /**
+     * Sets the new attackspeed of this defender.
+     * @param attackspeed new attackspeed
+     */
+    public void setAttackspeed(double attackspeed) {
+        this.attackspeed = attackspeed;
+    }
+
+    /**
+     * Determines if this defender deals aoe damage or not.
+     * @return aoe?
+     */
+    public boolean isAoe() {
+        return aoe;
+    }
+
+    /**
+     * Sets if this defender deals aoe damage or not.
+     * @param aoe ?
+     */
+    public void setAoe(boolean aoe) {
+        this.aoe = aoe;
     }
 }
