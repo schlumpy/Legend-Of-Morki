@@ -2,7 +2,7 @@ package src.view;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import view.manager.SceneManager;
+import src.view.manager.SceneManager;
 
 public class Main extends Application {
     private Stage stage;
