@@ -1,15 +1,15 @@
-package logic.turrets;
+package logic.defenders;
 
 /**
- * Turret is only the base for a defending structure or archer
- * Turret does not deal damage.
+ * ATurret is only the base for a defending structure or archer
+ * ATurret does not deal damage.
  */
-public abstract class Turret {
+public abstract class ATurret {
 
-    private Defender[] type;
+    private ADefender[] type;
     private boolean alive;
 
-    Turret(Defender[] defence) {
+    ATurret(ADefender[] defence) {
         int MAXLENGTH = 4;
         System.arraycopy(defence, 0, this.type, 0, MAXLENGTH);
         this.type = defence;
@@ -25,19 +25,19 @@ public abstract class Turret {
     }
 
     /**
-     * Returns number of current defenders, after getting the array of current types of defenders.
-     * @param defence current array of defenders
-     * @return current number of defenders
+     * Returns number of current soldiers, after getting the array of current types of soldiers.
+     * @param defence current array of soldiers
+     * @return current number of soldiers
      */
-    public int getNumberOfDefenders(Defender[] defence) {
+    public int getNumberOfDefenders(ADefender[] defence) {
         int re = 0;
-        for (Defender amountDefenders : defence) {
+        for (ADefender amountDefenders : defence) {
             re += 1;
         }
         return re;
     }
 
-    public Defender[] getCurrentDefenders() {
+    public ADefender[] getCurrentDefenders() {
         return this.type;
     }
 

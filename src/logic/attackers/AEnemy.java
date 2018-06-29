@@ -1,11 +1,11 @@
-package logic.enemies;
+package logic.attackers;
 
-public abstract class Enemy {
+public abstract class AEnemy {
 
     int hp;
     int dmg;
     int speed;
-    int attackspeed;
+    double attackspeed;
     boolean alive;
     boolean aoe;
 
@@ -34,7 +34,7 @@ public abstract class Enemy {
     }
 
     /**
-     * Sets the damage of an Enemy, e.g. after a buff
+     * Sets the damage of an AEnemy, e.g. after a buff
      * @param dmg new dmg
      */
     public void setDmg(int dmg) {
@@ -49,7 +49,7 @@ public abstract class Enemy {
      * Sets Attackspeed, e.g. after a buff
      * @param attackspeed new speed
      */
-    public void setAttackspeed(int attackspeed) {
+    public void setAttackspeed(double attackspeed) {
         this.attackspeed = attackspeed;
     }
 
@@ -57,16 +57,32 @@ public abstract class Enemy {
      * Gets the Attackspeed of a certain kind of monster
      * @return attackspeed
      */
-    public int getAttackspeed() {
+    public double getAttackspeed() {
         return attackspeed;
     }
 
     /**
-     * Gets the State of an enemy
+     * Sets current status
+     * @param alive current status
+     */
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    /**
+     * Gets the State of an enemy.
      * @return alive?
      */
     public boolean isAlive() {
         return alive;
+    }
+
+    /**
+     * Sets if the attacker deals area of effect damage.
+     * @param aoe ?
+     */
+    public void setAoe(boolean aoe) {
+        this.aoe = aoe;
     }
 
     /**

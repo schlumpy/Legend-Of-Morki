@@ -1,8 +1,8 @@
-package logic.turrets.defenders;
+package logic.defenders.soldiers;
 
-import logic.turrets.Defender;
+import logic.defenders.ADefender;
 
-public class Archer extends Defender {
+public class Archer extends ADefender {
 
     Archer() {
         this.setHp(30);

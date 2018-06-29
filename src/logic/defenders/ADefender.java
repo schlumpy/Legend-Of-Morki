@@ -1,6 +1,6 @@
-package logic.turrets;
+package logic.defenders;
 
-public abstract class Defender {
+public abstract class ADefender {
 
     int hp;
     int dmg;
