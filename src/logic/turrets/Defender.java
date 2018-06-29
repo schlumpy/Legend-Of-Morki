@@ -1,11 +1,12 @@
 package logic.turrets;
 
-abstract class Defender {
+public abstract class Defender {
 
     int hp;
     int dmg;
     double attackspeed;
     boolean alive;
+    boolean aoe;
 
     /**
      * Minus one defender.
@@ -28,5 +29,11 @@ abstract class Defender {
         return this.dmg;
     }
 
-
+    /**
+     * Sets the new HP of a defender
+     * @param hp new hp
+     */
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
 }

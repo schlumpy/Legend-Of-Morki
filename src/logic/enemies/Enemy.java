@@ -7,6 +7,7 @@ public abstract class Enemy {
     int speed;
     int attackspeed;
     boolean alive;
+    boolean aoe;
 
     /**
      * Gets the current amount of hp
@@ -66,5 +67,13 @@ public abstract class Enemy {
      */
     public boolean isAlive() {
         return alive;
+    }
+
+    /**
+     * Does the attacker deal aoe damage?
+     * @return aoe?
+     */
+    public boolean isAoe() {
+        return this.aoe;
     }
 }
