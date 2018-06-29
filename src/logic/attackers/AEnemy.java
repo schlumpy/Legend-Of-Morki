@@ -1,6 +1,6 @@
 package logic.attackers;
 
-public abstract class AEnemy {
+public abstract class AEnemy implements IEnemy {
 
     int hp;
     int dmg;
@@ -10,86 +10,87 @@ public abstract class AEnemy {
     boolean aoe;
 
     /**
-     * Gets the current amount of hp
-     * @return current hp
+     * @inheritDoc
      */
     public int getHp() {
         return hp;
     }
 
     /**
-     * Sets the new hp of an enemy
-     * @param hp new hp
+     * @inheritDoc
      */
     public void setHp(int hp) {
         this.hp = hp;
     }
 
     /**
-     * Gets the current damage an enemy is capable of
-     * @return current damage
+     * @inheritDoc
      */
     public int getDmg() {
         return dmg;
     }
 
     /**
-     * Sets the damage of an AEnemy, e.g. after a buff
-     * @param dmg new dmg
+     * @inheritDoc
      */
     public void setDmg(int dmg) {
         this.dmg = dmg;
     }
 
-    /*
-    Getters/Setters missing
-     */
-
     /**
-     * Sets Attackspeed, e.g. after a buff
-     * @param attackspeed new speed
+     * @inheritDoc
      */
-    public void setAttackspeed(double attackspeed) {
-        this.attackspeed = attackspeed;
+    public int getSpeed() {
+        return speed;
     }
 
     /**
-     * Gets the Attackspeed of a certain kind of monster
-     * @return attackspeed
+     * @inheritDoc
+     */
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    /**
+     * @inheritDoc
      */
     public double getAttackspeed() {
         return attackspeed;
     }
 
     /**
-     * Sets current status
-     * @param alive current status
+     * @inheritDoc
      */
-    public void setAlive(boolean alive) {
-        this.alive = alive;
+    public void setAttackspeed(double attackspeed) {
+        this.attackspeed = attackspeed;
     }
 
     /**
-     * Gets the State of an enemy.
-     * @return alive?
+     * @inheritDoc
      */
     public boolean isAlive() {
         return alive;
     }
 
     /**
-     * Sets if the attacker deals area of effect damage.
-     * @param aoe ?
+     * @inheritDoc
+     */
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public boolean isAoe() {
+        return this.aoe;
+    }
+
+    /**
+     * @inheritDoc
      */
     public void setAoe(boolean aoe) {
         this.aoe = aoe;
     }
 
-    /**
-     * Does the attacker deal aoe damage?
-     * @return aoe?
-     */
-    public boolean isAoe() {
-        return this.aoe;
-    }
 }
