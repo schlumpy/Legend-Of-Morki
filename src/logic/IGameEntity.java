@@ -1,6 +1,6 @@
-package logic.attackers;
+package logic;
 
-public interface IEnemy {
+public interface IGameEntity {
 
     /**
      * Gets the current amount of hp
@@ -9,37 +9,37 @@ public interface IEnemy {
     public int getHp();
 
     /**
-     * Sets the new hp of an enemy
+     * Sets the new hp of an entity
      * @param hp new hp
      */
     public void setHp(int hp);
 
     /**
-     * Gets the current damage an enemy is capable of
+     * Gets the current damage an entity is capable of
      * @return current damage
      */
     public int getDmg();
 
     /**
-     * Sets the damage of an AEnemy, e.g. after a buff
+     * Sets the damage of an entity, e.g. after a buff
      * @param dmg new dmg
      */
     public void setDmg(int dmg);
 
     /**
-     * Gets the current speed of an enemy
+     * Gets the current speed of an entity
      * @return current speed
      */
     public int getSpeed();
 
     /**
-     * Sets the new speed of an enemy
+     * Sets the new speed of an entity
      * @param speed new speed
      */
     public void setSpeed(int speed);
 
     /**
-     * Gets the Attackspeed of a certain kind of monster
+     * Gets the Attackspeed of a certain kind of entity
      * @return attackspeed
      */
     public double getAttackspeed();
@@ -51,7 +51,7 @@ public interface IEnemy {
     public void setAttackspeed(double attackspeed);
 
     /**
-     * Gets the State of an enemy.
+     * Gets the State of an entity
      * @return alive?
      */
     public boolean isAlive();

@@ -1,13 +1,15 @@
-package logic.attackers;
+package logic;
 
-public abstract class AEnemy implements IEnemy {
+import logic.IGameEntity;
 
-    int hp;
-    int dmg;
-    int speed;
-    double attackspeed;
-    boolean alive;
-    boolean aoe;
+public abstract class AGameEntity implements IGameEntity {
+
+    private int hp;
+    private int dmg;
+    private int speed;
+    private double attackspeed;
+    private boolean alive;
+    private boolean aoe;
 
     /**
      * @inheritDoc

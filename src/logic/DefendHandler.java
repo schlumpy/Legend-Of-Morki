@@ -1,7 +1,5 @@
 package logic;
 
-import logic.attackers.AEnemy;
-import logic.defenders.ADefender;
 import logic.defenders.ATurret;
 
 public class DefendHandler {
@@ -11,8 +9,8 @@ public class DefendHandler {
      * @param defender ATurret
      * @param attacker Monster
      */
-    public void handleDefence(ATurret defender, AEnemy attacker) {
-        ADefender[] defence = defender.getCurrentDefenders();
+    public void handleDefence(ATurret defender, AGameEntity attacker) {
+        AGameEntity[] defence = defender.getCurrentDefenders();
         //while there is at least one defender on the turret, it will result in a fight
         while (!defender.empty()) {
             //soldiers do damage to the attacker
@@ -20,7 +18,7 @@ public class DefendHandler {
             //does the attacker deal area of effect damage?
             if (attacker.isAoe()) {
                 //deal damage to all soldiers
-                for (ADefender curDefence : defence) {
+                for (AGameEntity curDefence : defence) {
                     if (curDefence != null) {
                         curDefence.setHp(curDefence.getHp() - attacker.getDmg());
                     }

@@ -1,15 +1,17 @@
 package logic.defenders;
 
+import logic.AGameEntity;
+
 /**
  * ATurret is only the base for a defending structure or archer
  * ATurret does not deal damage.
  */
 public abstract class ATurret {
 
-    private ADefender[] type;
+    private AGameEntity[] type;
     private boolean alive;
 
-    ATurret(ADefender[] defence) {
+    ATurret(AGameEntity[] defence) {
         int MAXLENGTH = 4;
         System.arraycopy(defence, 0, this.type, 0, MAXLENGTH);
         this.type = defence;
@@ -29,15 +31,15 @@ public abstract class ATurret {
      * @param defence current array of soldiers
      * @return current number of soldiers
      */
-    public int getNumberOfDefenders(ADefender[] defence) {
+    public int getNumberOfDefenders(AGameEntity[] defence) {
         int re = 0;
-        for (ADefender amountDefenders : defence) {
+        for (AGameEntity amountDefenders : defence) {
             re += 1;
         }
         return re;
     }
 
-    public ADefender[] getCurrentDefenders() {
+    public AGameEntity[] getCurrentDefenders() {
         return this.type;
     }
 
@@ -48,14 +50,14 @@ public abstract class ATurret {
     public int getTotalDefenderDamage() {
         int re = 0;
         for (int i = 0; i <= this.type.length; i++) {
-            re += this.type[i].dmg;
+            re += this.type[i].getDmg();
         }
         return re;
     }
 
     public boolean empty() {
         for (int i = 0; i <= this.type.length; i++) {
-            if (!this.type[i].alive) {
+            if (!this.type[i].isAlive()) {
                 return false;
             }
         }
