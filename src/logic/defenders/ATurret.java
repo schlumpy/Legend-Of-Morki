@@ -2,16 +2,17 @@ package logic.defenders;
 
 import logic.AGameEntity;
 
-/**
- * ATurret is only the base for a defending structure or archer
- * ATurret does not deal damage.
- */
-public abstract class ATurret {
+public abstract class ATurret implements ITurret {
 
     private AGameEntity[] type;
     private boolean alive;
 
-    ATurret(AGameEntity[] defence) {
+    /**
+     * Turret is base for the defenders to stand on. A Turret does not deal any damage.
+     * Creates a new turret
+     * @param defence array of defenders
+     */
+    public ATurret(AGameEntity[] defence) {
         int MAXLENGTH = 4;
         System.arraycopy(defence, 0, this.type, 0, MAXLENGTH);
         this.type = defence;
@@ -19,17 +20,14 @@ public abstract class ATurret {
     }
 
     /**
-     * Gets the State of a turret
-     * @return alive?
+     * @inheritDoc
      */
     public boolean isAlive() {
         return alive;
     }
 
     /**
-     * Returns number of current soldiers, after getting the array of current types of soldiers.
-     * @param defence current array of soldiers
-     * @return current number of soldiers
+     * @inheritDoc
      */
     public int getNumberOfDefenders(AGameEntity[] defence) {
         int re = 0;
@@ -38,15 +36,23 @@ public abstract class ATurret {
         }
         return re;
     }
-
+    /**
+     * @inheritDoc
+     */
     public AGameEntity[] getCurrentDefenders() {
         return this.type;
     }
 
+    /**
+     * @inheritDoc
+     */
     public int getAmountDefenders() {
         return this.type.length;
     }
 
+    /**
+     * @inheritDoc
+     */
     public int getTotalDefenderDamage() {
         int re = 0;
         for (int i = 0; i <= this.type.length; i++) {
@@ -55,6 +61,9 @@ public abstract class ATurret {
         return re;
     }
 
+    /**
+     * @inheritDoc
+     */
     public boolean empty() {
         for (int i = 0; i <= this.type.length; i++) {
             if (!this.type[i].isAlive()) {

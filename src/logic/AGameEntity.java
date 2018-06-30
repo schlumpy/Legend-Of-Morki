@@ -1,7 +1,5 @@
 package logic;
 
-import logic.IGameEntity;
-
 public abstract class AGameEntity implements IGameEntity {
 
     private int hp;
@@ -10,6 +8,13 @@ public abstract class AGameEntity implements IGameEntity {
     private double attackspeed;
     private boolean alive;
     private boolean aoe;
+
+    /**
+     * Lets the entity die
+     */
+    public void die() {
+        this.alive = false;
+    }
 
     /**
      * @inheritDoc

@@ -10,6 +10,7 @@ public class Sprinter extends AGameEntity {
     public Sprinter() {
         this.setHp(10);
         this.setDmg(30);
+        this.setSpeed(10);
         this.setAttackspeed(0.7);
         this.setAlive(true);
     }

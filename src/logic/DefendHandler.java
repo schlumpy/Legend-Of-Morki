@@ -1,15 +1,15 @@
 package logic;
 
-import logic.defenders.ATurret;
+import logic.defenders.ITurret;
 
 public class DefendHandler {
 
     /**
      * Handles the fight between a defending turret and an attacking monster
      * @param defender ATurret
-     * @param attacker Monster
+     * @param attacker IGameEntity (Monster)
      */
-    public void handleDefence(ATurret defender, AGameEntity attacker) {
+    public void handleDefence(ITurret defender, IGameEntity attacker) {
         AGameEntity[] defence = defender.getCurrentDefenders();
         //while there is at least one defender on the turret, it will result in a fight
         while (!defender.empty()) {
