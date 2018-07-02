@@ -23,6 +23,6 @@ public class EvilMage extends AGameEntity {
         this.setAlive(false);
         //explodes when he dies
         this.field.getAdjacentTiles(this);
-        //deal damage to these tiles
+
     }
 }

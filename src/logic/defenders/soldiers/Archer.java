@@ -4,7 +4,7 @@ import logic.AGameEntity;
 
 public class Archer extends AGameEntity {
 
-    Archer() {
+    public Archer() {
         this.setHp(30);
         this.setDmg(14);
         this.setAttackspeed(0.4);

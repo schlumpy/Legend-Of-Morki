@@ -4,6 +4,13 @@ import logic.IGameEntity;
 
 public class GameField extends Tiles {
 
+    public final int FIELD = 100;
+    Tiles[][] tiles;
+
+    public GameField() {
+        this.tiles = new Tiles[10][10];
+    }
+
     //experimental
     //replace with interface later
 
@@ -13,7 +20,6 @@ public class GameField extends Tiles {
      * @return array of tiles
      */
     public Tiles[] getAdjacentTiles(IGameEntity entity) {
-        //just so i dont get annoyed by the warning ;)
-        return getAdjacentTiles(entity);
+        //TODO
     }
 }

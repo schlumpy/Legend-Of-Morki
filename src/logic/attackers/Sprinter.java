@@ -5,7 +5,7 @@ import logic.AGameEntity;
 public class Sprinter extends AGameEntity {
 
     /**
-     * Creates an instance of Sprinter
+     * Creates a new instance of a Sprinter
      */
     public Sprinter() {
         this.setHp(10);
