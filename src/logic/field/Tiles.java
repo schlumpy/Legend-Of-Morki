@@ -1,14 +1,22 @@
 package logic.field;
 
-import logic.AGameEntity;
 import logic.IGameEntity;
 
 public class Tiles {
 
     IGameEntity[] currentOnField;
+    int xCoord;
+    int yCoord;
+
 
     Tiles() {
         currentOnField = null;
+        for (int i = 0;i < currentOnField.length; i++) {
+            for (int j = 0; j < currentOnField.length; j++) {
+                //сука блядь, иди нахуи
+
+            }
+        }
     }
 
     /**

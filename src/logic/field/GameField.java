@@ -21,5 +21,6 @@ public class GameField extends Tiles {
      */
     public Tiles[] getAdjacentTiles(IGameEntity entity) {
         //TODO
+        return null;
     }
 }

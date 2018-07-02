@@ -73,4 +73,8 @@ public interface IGameEntity {
      * @param aoe ?
      */
     void setAoe(boolean aoe);
+
+    int getLocation();
+
+    void setLocation();
 }
