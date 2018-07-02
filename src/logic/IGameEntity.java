@@ -1,5 +1,7 @@
 package logic;
 
+import logic.field.Tile;
+
 public interface IGameEntity {
 
     /**
@@ -73,4 +75,10 @@ public interface IGameEntity {
      * @param aoe ?
      */
     void setAoe(boolean aoe);
+
+    /**
+     * Gets the current tile of this entity
+     * @return current tile
+     */
+    Tile getCurrentPos();
 }

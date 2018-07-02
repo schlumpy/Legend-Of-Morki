@@ -3,12 +3,16 @@ package logic.field;
 import logic.AGameEntity;
 import logic.IGameEntity;
 
-public class Tiles {
+public class Tile {
 
-    IGameEntity[] currentOnField;
+    private IGameEntity[] currentOnField;
+    private int xCoord;
+    private int yCoord;
 
-    Tiles() {
+    Tile(int x, int y) {
         currentOnField = null;
+        this.xCoord = x;
+        this.yCoord = y;
     }
 
     /**
@@ -31,11 +35,23 @@ public class Tiles {
         }
     }
 
+    public Tile getTileFromCoords(int x, int y) {
+
+    }
+
     public void leaveField() {
         //TODO
     }
 
     public IGameEntity[] getCurrentOnField() {
         return currentOnField;
+    }
+
+    public int getxCoord() {
+        return this.xCoord;
+    }
+
+    public int getyCoord() {
+        return this.yCoord;
     }
 }

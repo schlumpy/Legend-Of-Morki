@@ -6,7 +6,7 @@ import logic.field.GameField;
 public class EvilMage extends AGameEntity {
 
     //experimental
-    public GameField field;
+    GameField field;
 
     public EvilMage(GameField gameField) {
         //use gamefield to determine where the mage will spawn
@@ -22,7 +22,7 @@ public class EvilMage extends AGameEntity {
     public void die() {
         this.setAlive(false);
         //explodes when he dies
-        this.field.getAdjacentTiles(this);
+        this.field.getAdjacentTileCoords(this);
 
     }
 }

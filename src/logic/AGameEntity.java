@@ -1,5 +1,7 @@
 package logic;
 
+import logic.field.Tile;
+
 public abstract class AGameEntity implements IGameEntity {
 
     private int hp;
@@ -8,6 +10,7 @@ public abstract class AGameEntity implements IGameEntity {
     private double attackspeed;
     private boolean alive;
     private boolean aoe;
+    private Tile position;
 
     /**
      * Lets the entity die
@@ -100,4 +103,10 @@ public abstract class AGameEntity implements IGameEntity {
         this.aoe = aoe;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public Tile getCurrentPos() {
+        return this.position;
+    }
 }
