@@ -111,4 +111,14 @@ public class Morki implements IHero{
     public void setAoe(boolean aoe) {
 
     }
+
+    @Override
+    public int getLocation() {
+        return 0;
+    }
+
+    @Override
+    public void setLocation() {
+
+    }
 }
