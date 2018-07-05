@@ -17,7 +17,7 @@ public class Morki extends AHero {
         this.setAoe(false);
         this.setAP(10);
         this.setArmor(5);
-        this.setMainSkill(new TacticianSkill());
+        this.setMainSkill(new TacticianSkill());//use nutzt den skill
         this.setSecondSkill(null);
         this.setThirdSkill(null);
     }
