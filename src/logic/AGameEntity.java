@@ -1,5 +1,7 @@
 package logic;
 
+import logic.field.GameField;
+import logic.field.IGameField;
 import logic.field.Tile;
 
 public abstract class AGameEntity implements IGameEntity {
@@ -11,6 +13,7 @@ public abstract class AGameEntity implements IGameEntity {
     private boolean alive;
     private boolean aoe;
     private Tile position;
+    private GameField field;
 
     /**
      * Lets the entity die
@@ -108,5 +111,19 @@ public abstract class AGameEntity implements IGameEntity {
      */
     public Tile getCurrentPos() {
         return this.position;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public void setField(GameField gamefield) {
+        this.field = gamefield;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public GameField getField() {
+        return this.field;
     }
 }

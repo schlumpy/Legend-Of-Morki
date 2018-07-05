@@ -1,5 +1,7 @@
 package logic;
 
+import logic.field.GameField;
+import logic.field.IGameField;
 import logic.field.Tile;
 
 public interface IGameEntity {
@@ -81,4 +83,16 @@ public interface IGameEntity {
      * @return current tile
      */
     Tile getCurrentPos();
+
+    /**
+     * Sets a new field for this entity.
+     * @param gamefield new field
+     */
+    void setField(GameField gamefield);
+
+    /**
+     * Gets the Field this entity is present on.
+     * @return present field
+     */
+    GameField getField();
 }
