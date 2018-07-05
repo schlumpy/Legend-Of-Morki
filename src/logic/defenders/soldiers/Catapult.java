@@ -6,11 +6,11 @@ import logic.defenders.ATurret;
 public class Catapult extends AGameEntity {
 
     /**
-     * Creates a ne instance of a catapult
+     * Creates a new instance of a catapult
      */
     public Catapult(ATurret turret) {
         this.setHp(144);
-        this.setDmg(20);
+        this.setDmg(25);
         if (!turret.empty()) {
             this.setAttackspeed(0.2);
         } else {

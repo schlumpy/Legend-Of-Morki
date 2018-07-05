@@ -7,7 +7,7 @@ public class Archer extends AGameEntity {
     public Archer() {
         this.setHp(30);
         this.setDmg(14);
-        this.setAttackspeed(0.4);
+        this.setAttackspeed(0.5);
         this.setAlive(true);
         this.setAoe(false);
     }

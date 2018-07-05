@@ -4,7 +4,7 @@ import logic.IGameEntity;
 
 public class GameField {
 
-    public final int FIELD = 100;
+    private Tile[] path;
     private Tile[][] tiles;
 
     public GameField() {
@@ -40,18 +40,11 @@ public class GameField {
      *
      * @return array of tiles
      */
-    public int[][] getAdjacentTileCoords(IGameEntity entity) {
+    public int[] getAdjacentTileCoords(IGameEntity entity) {
         //copies the coordinates of this tile to calculate the array
         int x = entity.getCurrentPos().getxCoord();
         int y = entity.getCurrentPos().getyCoord();
-        return new int[][]{ {y+1,x},
-                            {y+1,x+1},
-                            {y,x+1},
-                            {y-1,x+1},
-                            {y-1,x},
-                            {y-1,x-1},
-                            {y,x-1},
-                            {y+1,x-1}
-        };
+        //After each y-coord comes a x coord
+        return new int[] { y+1, x, y+1, x+1, y, x+1, y-1, x+1, y-1, x, y-1, x-1, y, x-1, y+1, x-1};
     }
 }
