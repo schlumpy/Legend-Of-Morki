@@ -10,11 +10,11 @@ public interface IHero extends IGameEntity{
 
     Skills getThirdSkill();
 
-    public void setMainSkill();
+    public void setMainSkill(Skills skill);
 
-    public void setSecondSkill();
+    public void setSecondSkill(Skills skill);
 
-    public void setThirdSkill();
+    public void setThirdSkill(Skills skill);
 
     public int getLevel();
 

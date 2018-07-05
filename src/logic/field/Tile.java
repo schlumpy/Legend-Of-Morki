@@ -1,6 +1,5 @@
 package logic.field;
 
-import logic.AGameEntity;
 import logic.IGameEntity;
 
 public class Tile {
@@ -36,7 +35,7 @@ public class Tile {
     }
 
     public Tile getTileFromCoords(int x, int y) {
-
+        return null;
     }
 
     public void leaveField() {

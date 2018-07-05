@@ -8,7 +8,10 @@ import logic.field.GameField;
 public class Skills {
 
     public void TacticianSkill(GameField gameField, IHero hero) {
-        gameField.getAdjacentTiles(hero.getHero());
+        gameField.getAdjacentTileCoords(hero.getHero());
 
+    }
+    public Skills getTacticianSkill(){
+        return
     }
 }
