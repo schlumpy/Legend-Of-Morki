@@ -1,8 +1,6 @@
 package logic.attackers;
 
 import logic.AGameEntity;
-import logic.IGameEntity;
-import logic.defenders.ATurret;
 import logic.field.GameField;
 
 public class EvilMage extends AGameEntity {
@@ -23,11 +21,11 @@ public class EvilMage extends AGameEntity {
     public void die(GameField field) {
         this.setAlive(false);
         //explodes when he dies
-        for (int i = 0; i < field.getAdjacentTiles(this).length; i++) {
+        for (int i = 0; i < field.getAdjacentTiles(getCurrentPos().getxCoord(), getCurrentPos().getyCoord()).length; i++) {
                 //deals half of its damage, currently hardcoded
-                for (int j = 0; j < field.getAdjacentTiles(this).length; j++) {
+                for (int j = 0; j < field.getAdjacentTiles(getCurrentPos().getxCoord(), getCurrentPos().getyCoord()).length; j++) {
                     //Deal damage to all defenders on all tiles in range
-                    field.getAdjacentTiles(this)[j].dealDamage(this);
+                    field.getAdjacentTiles(getCurrentPos().getxCoord(), getCurrentPos().getyCoord())[j].dealDamage(this);
             }
         }
     }

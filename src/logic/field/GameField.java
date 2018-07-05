@@ -1,7 +1,5 @@
 package logic.field;
 
-import logic.IGameEntity;
-
 public class GameField implements IGameField {
 
     private Tile[] path; //TODO
@@ -40,10 +38,7 @@ public class GameField implements IGameField {
      *
      * @return array of tiles
      */
-    public Tile[] getAdjacentTiles(IGameEntity entity) {
-        //copies the coordinates of this tile to calculate the array
-        int x = entity.getCurrentPos().getxCoord();
-        int y = entity.getCurrentPos().getyCoord();
+    public Tile[] getAdjacentTiles(int x, int y) {
         int[] copy = new int[] { y+1, x, y+1, x+1, y, x+1, y-1, x+1, y-1, x, y-1, x-1, y, x-1, y+1, x-1};
         Tile[] re = new Tile[9];
 
@@ -51,7 +46,7 @@ public class GameField implements IGameField {
             //After each y-coord comes a x coord
             if (copy[i] % 2 == 0) {
                 for (int j = 0; j < copy.length; j++) {
-                    re[j] = entity.getField().getTileFromCoords(i, i + 1);
+                    re[j] = this.getTileFromCoords(i, i + 1);
                 }
             }
         }

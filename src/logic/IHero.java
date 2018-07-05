@@ -4,21 +4,29 @@ package logic;
  * Created by schlumpy on 02.07.2018.
  */
 public interface IHero extends IGameEntity{
-    Skills getMainSkill();
+    ISkill getMainSkill();
 
-    Skills getSecondSkill();
+    ISkill getSecondSkill();
 
-    Skills getThirdSkill();
+    ISkill getThirdSkill();
 
-    public void setMainSkill(Skills skill);
+    void setMainSkill(ISkill skill);
 
-    public void setSecondSkill(Skills skill);
+    void setSecondSkill(ISkill skill);
 
-    public void setThirdSkill(Skills skill);
+    void setThirdSkill(ISkill skill);
 
-    public int getLevel();
+    int getLevel();
 
-    public void setLevel();
+    void setLevel(int level);
 
-    public  IHero getHero();
+    IHero getHero();
+
+    void setArmor(int armor);
+
+    void setAP(int ap);
+
+    int getArmor();
+
+    int getAP();
 }

@@ -6,9 +6,9 @@ import logic.field.Tile;
  * Created by schlumpy on 05.07.2018.
  */
 public abstract class AHero implements IHero {
-    private Skills mainSkill;
-    private Skills secondSkill;
-    private Skills thirdSkill;
+    private ISkill mainSkill;
+    private ISkill secondSkill;
+    private ISkill thirdSkill;
     private int hp;
     private int dmg;
     private int speed;
@@ -16,35 +16,37 @@ public abstract class AHero implements IHero {
     private boolean alive;
     private boolean aoe;
     private Tile position;
+    private int ap;
+    private int armor;
 
 
     @Override
-    public Skills getMainSkill() {
+    public ISkill getMainSkill() {
         return null;
     }
 
     @Override
-    public Skills getSecondSkill() {
+    public ISkill getSecondSkill() {
         return null;
     }
 
     @Override
-    public Skills getThirdSkill() {
+    public ISkill getThirdSkill() {
         return null;
     }
 
     @Override
-    public void setMainSkill(Skills skill) {
+    public void setMainSkill(ISkill skill) {
 
     }
 
     @Override
-    public void setSecondSkill() {
+    public void setSecondSkill(ISkill skill) {
 
     }
 
     @Override
-    public void setThirdSkill() {
+    public void setThirdSkill(ISkill skill) {
 
     }
 
@@ -54,13 +56,33 @@ public abstract class AHero implements IHero {
     }
 
     @Override
-    public void setLevel() {
+    public void setLevel(int level) {
 
     }
 
     @Override
     public IHero getHero() {
         return null;
+    }
+
+    @Override
+    public void setArmor(int armor) {
+
+    }
+
+    @Override
+    public void setAP(int ap) {
+
+    }
+
+    @Override
+    public int getArmor() {
+        return 0;
+    }
+
+    @Override
+    public int getAP() {
+        return 0;
     }
 
     @Override
@@ -127,4 +149,5 @@ public abstract class AHero implements IHero {
     public Tile getCurrentPos() {
         return null;
     }
+
 }

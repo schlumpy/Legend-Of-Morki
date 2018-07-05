@@ -1,6 +1,5 @@
 package logic.field;
 
-import logic.AGameEntity;
 import logic.IGameEntity;
 
 public class Tile {

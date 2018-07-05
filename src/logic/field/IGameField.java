@@ -1,7 +1,5 @@
 package logic.field;
 
-import logic.IGameEntity;
-
 public interface IGameField {
 
     /**
@@ -23,5 +21,5 @@ public interface IGameField {
      *
      * @return array of tiles
      */
-    Tile[] getAdjacentTiles(IGameEntity entity);
+    Tile[] getAdjacentTiles(int x, int y);
 }
