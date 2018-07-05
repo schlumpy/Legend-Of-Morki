@@ -16,23 +16,18 @@ public class EvilMage extends AGameEntity {
     }
 
     /**
+     * Passive Ability: Arcane Overload
      * When the evil mage dies, he deals half of its damage to all surrounding defenders.
      * TODO change dependencies
      */
     public void die(GameField field) {
         this.setAlive(false);
         //explodes when he dies
-        for (int i = 0; i < field.getAdjacentTileCoords(this).length; i++) {
-            //y+1, x, y+1, x+1, y, x+1, y-1, x+1, y-1, x, y-1, x-1, y, x-1, y+1, x-1
-            if (field.getAdjacentTileCoords(this)[i] % 2 == 0) {
-                IGameEntity[] cur = field.getTileFromCoords(i, i + 1).getCurrentOnTile();
+        for (int i = 0; i < field.getAdjacentTiles(this).length; i++) {
                 //deals half of its damage, currently hardcoded
-                for (IGameEntity current : cur) {
-                    //only deals damage to turrets so far
-                    if (current instanceof ATurret) {
-                        current.setHp(current.getHp() - 50);
-                    }
-                }
+                for (int j = 0; j < field.getAdjacentTiles(this).length; j++) {
+                    //Deal damage to all defenders on all tiles in range
+                    field.getAdjacentTiles(this)[j].dealDamage(this);
             }
         }
     }

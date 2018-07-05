@@ -34,7 +34,6 @@ public class Tile {
         }
     }
 
-
     /**
      * Gets all present entities on this tile
      * @return entities
@@ -43,11 +42,29 @@ public class Tile {
         return this.currentOnTile;
     }
 
+    /**
+     * Gets the x coordinate of this tile
+     * @return x Coord
+     */
     public int getxCoord() {
         return this.xCoord;
     }
 
+    /**
+     * Gets the y Coordinate of this tile
+     * @return y Coord
+     */
     public int getyCoord() {
         return this.yCoord;
+    }
+
+    /**
+     * Deals damage to all defenders on this tile
+     */
+    public void dealDamage(IGameEntity attacker) {
+        for (int i = 0; i < this.getCurrentOnTile().length; i ++) {
+            //TODO probably doesn't work. if not so, will produce bugs
+            this.getCurrentOnTile()[i].setHp(this.getCurrentOnTile()[i].getHp() - attacker.getDmg());
+        }
     }
 }
