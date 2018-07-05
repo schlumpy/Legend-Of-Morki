@@ -24,6 +24,16 @@ public class GameField {
         }
     }
 
+    public Tile getTileFromCoords(int x, int y) {
+        for (int i = 0; i < tiles.length; i++) {
+            int j = 0;
+            if (j == y && i == x) {
+                return tiles[i][j];
+            }
+        }
+        return null;
+    }
+
     /**
      * Gets the tiles in ultimate vicinity packed in an array,
      * from top first clockwise to top left
@@ -34,6 +44,14 @@ public class GameField {
         //copies the coordinates of this tile to calculate the array
         int x = entity.getCurrentPos().getxCoord();
         int y = entity.getCurrentPos().getyCoord();
-        return new int[][]{{y+1,x}, {y+1,x+1}, {y,x+1}, {y-1,x+1}, {y-1,x}, {y-1,x-1}, {y,x-1}, {y+1,x-1}};
+        return new int[][]{ {y+1,x},
+                            {y+1,x+1},
+                            {y,x+1},
+                            {y-1,x+1},
+                            {y-1,x},
+                            {y-1,x-1},
+                            {y,x-1},
+                            {y+1,x-1}
+        };
     }
 }

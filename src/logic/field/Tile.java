@@ -1,16 +1,15 @@
 package logic.field;
 
-import logic.AGameEntity;
 import logic.IGameEntity;
 
 public class Tile {
 
-    private IGameEntity[] currentOnField;
+    private IGameEntity[] currentOnTile;
     private int xCoord;
     private int yCoord;
 
     Tile(int x, int y) {
-        currentOnField = null;
+        currentOnTile = null;
         this.xCoord = x;
         this.yCoord = y;
     }
@@ -20,7 +19,7 @@ public class Tile {
      * @return empty?
      */
     public boolean empty() {
-        return currentOnField == null;
+        return currentOnTile == null;
     }
 
     /**
@@ -28,23 +27,20 @@ public class Tile {
      * @param newEntity new
      */
     public void enterField(IGameEntity newEntity) {
-        for (int i  = currentOnField.length; i > 0; i--) {
-            if (currentOnField[i] == null) {
-                currentOnField[i] = newEntity;
+        for (int i  = currentOnTile.length; i > 0; i--) {
+            if (currentOnTile[i] == null) {
+                currentOnTile[i] = newEntity;
             }
         }
     }
 
-    public Tile getTileFromCoords(int x, int y) {
 
-    }
-
-    public void leaveField() {
-        //TODO
-    }
-
-    public IGameEntity[] getCurrentOnField() {
-        return currentOnField;
+    /**
+     * Gets all present entities on this tile
+     * @return entities
+     */
+    public IGameEntity[] getCurrentOnTile() {
+        return this.currentOnTile;
     }
 
     public int getxCoord() {
